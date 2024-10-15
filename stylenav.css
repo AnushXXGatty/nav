@@ -16,7 +16,6 @@ nav{
     background-image: linear-gradient(to bottom, #334dc9, #3b579a);
     background-image: linear-gradient(to bottom, #3d446a, #e25d46);
     background-size: 100% 300px;
-    transform: perspective(1px) translateZ(0);
     transition: transform 0.5s;
    
     
@@ -65,3 +64,39 @@ ul li a{
 
 }
 
+.box{
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    margin: 100px;
+    position: relative;
+    border: 1px solid black;
+}
+
+.box::before{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    z-index: 2;
+    width: 10px;
+    height: 0;
+    background-color: blue;
+    transition: height 0.3s ease-in-out; 
+}
+
+.box::after{
+    content: '';
+    position: absolute;
+    top: 0px;
+    left: 0;
+    z-index: 3;
+    width: 0;
+    height: 10px;
+    background-color: yellow;
+    transition: width 0.3s ease-in-out; 
+}
+
+.box:hover::after, .box:hover::before{
+    height: 100%;
+}
