@@ -16,8 +16,6 @@ nav{
     background-image: linear-gradient(to bottom, #334dc9, #3b579a);
     background-image: linear-gradient(to bottom, #3d446a, #e25d46);
     background-size: 100% 300px;
-    transform: perspective(1px) translateZ(0);
-    transition: transform 0.5s;
    
     
 }
@@ -60,8 +58,72 @@ ul li a{
 
 } 
    li a:hover{
+    color: #afb8ed;
     border-bottom: 1px solid white;
     transition: 0;
 
 }
+@media (max-width:1053px) {
+    label a{
+        padding-left:50px;
+        font-size: 30px; ;
+    }
+   
+    nav ul a{
+       font-size: 16px;
+    }
+    
+}
+.check-btn{
+    font-size: 30px;
+    color: white;
+    float: right;
+    line-height: 80px;
+    margin-right: 40px;
+    cursor: pointer;
+    display: none;
+ }
+ #check{
+    display: none;
+ }
+@media(max-width:931px){
+    .check-btn{
+        display: block;
+    }
+  
+   ul{
+    position:fixed;
+    width: 100%;
+    height:130vh;
+    background-color: #586089;
+    top: 80px;
+    left:-120%;
+    text-align: center;
+    transition: all .5s;
+    
+   }
+  nav li.list{
+    display: block;
+   
+   }
+   nav li a{
+    font-size: 20px;
+   }
+  a:hover,a.active{
+    background: none;
+    color: #0082e6;
 
+  }
+  #check:checked ~ ul{
+    left: 0;
+  }
+ 
+ .logo a{
+    color: aliceblue;
+    position: fixed;
+ }
+   
+}
+body{
+    background-color: #dd8171;
+ }
