@@ -5,125 +5,240 @@
     padding: 0;
 }
 body {
-    background-image: url('https://www.pexels.com/');
-    
+    background-image: url('img/freepik__candid-image-photography-natural-textures-highly-r__54969.jpeg' );
+    background-size: cover; 
+    background-repeat: no-repeat;
+    background-position: center; 
+    height: 100vh;
+    overflow-y: hidden;
 }
 nav{
-    background-color: #002cff;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
     width: 100%;
     height: 80px;
-    background-image: linear-gradient(to bottom, #334dc9, #3b579a);
-    background-image: linear-gradient(to bottom, #3d446a, #e25d46);
-    background-size: 100% 300px;
+    background:rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
    
     
 }
-li.list{
-    display:inline;
-    line-height: 80px;
-    margin: 0 5px;
-    padding: 0 5px;
-    transition: background-color 0.5s;
-}
-ul{
-    float:right;
-    padding: 0 40px;
-    clip-path: polygon(0 0, 100% 0, 100% 80%, 0 80%);
-}
-  label a{
-    color: aliceblue;
-    line-height: 80px;
-    font-size: 35px;
-    font-weight: bold;
-    padding:0 150px;
-    border: none;
-    font-family:'Lato';
-   
-    
-}
-ul li a{
-    position:relative;
-    
+.menu{
+    box-shadow: 0 0 25px 0 rgba(0, 0, 0, 0.4);
+    display: flex;
+    flex-direction: column;
+    padding-top:50px ;
+    background: #a3a7b138;
+    backdrop-filter:blur(10px);
+    position:absolute;
+    top:0;
+    left:-120%;
+    border:none;
+    width: 15%;
+    height:100%;
     font-size: 18px;
-    color:white;
-    border-bottom-left-radius: ;
-    text-transform: uppercase;
-    padding: 5px;
-    border: none;
-    font-family:'Lato';
-    transition: border-bottom 0.5s;
-    
-    
-
-} 
-   li a:hover{
-    color: #afb8ed;
-    border-bottom: 1px solid white;
-    transition: 0;
-
+    justify-content: space-around ;
+    align-items: center;
+    transition: all 0.5s;
+    padding-bottom:10px ;
 }
-@media (max-width:1053px) {
-    label a{
-        padding-left:50px;
-        font-size: 30px; ;
-    }
-   
-    nav ul a{
-       font-size: 16px;
-    }
-    
+#check{
+    display: none;
+}
+#check:checked~.menu{
+    left: 0;
 }
 .check-btn{
-    font-size: 30px;
-    color: white;
-    float: right;
-    line-height: 80px;
-    margin-right: 40px;
     cursor: pointer;
-    display: none;
- }
- #check{
-    display: none;
- }
-@media(max-width:931px){
-    .check-btn{
-        display: block;
-    }
-  
-   ul{
-    position:fixed;
-    width: 100%;
-    height:130vh;
-    background-color: #586089;
-    top: 80px;
-    left:-120%;
-    text-align: center;
-    transition: all .5s;
-    
-   }
-  nav li.list{
-    display: block;
+    margin-left: 20px;
    
-   }
-   nav li a{
-    font-size: 20px;
-   }
-  a:hover,a.active{
-    background: none;
-    color: #0082e6;
-
-  }
-  #check:checked ~ ul{
-    left: 0;
-  }
- 
- .logo a{
-    color: aliceblue;
-    position: fixed;
- }
+   
    
 }
-body{
-    background-color: #dd8171;
- }
+.menu a{
+    text-shadow: 0 0 25px 0 rgba(0, 0, 0, 0.4);
+    border:none;
+    text-align: center;
+    height:25px;
+    width: 100px;
+    color: white;
+}
+
+.menu a:hover{
+    border: none;
+    outline: none ;
+    border-bottom:2px solid white;
+}
+a.logo{
+    color: white;
+    font-size: 30px;
+    margin: 100px;
+   
+}
+.check-close{
+    cursor: pointer;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+.container {
+    border:none;
+    position: absolute;
+    right: 160px;
+    outline: none;
+    background: white;
+    padding: 10px 10px;
+    height: 18px;
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    border-radius: 50px;
+    transition:0.8s;
+    box-shadow: 0 0 25px 0 rgba(0, 0, 0, 0.4);
+    cursor: pointer;
+}
+.container:hover input{
+    width: 200px;
+}
+.container input{
+    background: transparent;
+    border: none;
+    outline: none;
+    width: 0;
+    font-weight: 500;
+    font-size: 16px;
+    transition:0.8s;
+}
+.dropdown{
+    display: flex;
+    align-items: center;
+    position: absolute;
+    right: 20px;
+    padding: 0 20px;
+    
+}
+img{
+    border-radius: 10px;
+    background:none;
+    width: 95px;
+    height:inherit ;
+}
+.image{
+position: absolute;
+left:5%;
+
+}
+.dropdown-list{
+    position: absolute;
+    width: 300px;
+    display:none;
+    background: rgba(211, 211, 211, 0.729);
+    top:66px;
+    right:30%;
+    height:390px;
+    border-radius: 20px;
+    border: 1px solid black;
+}
+
+.dropdown-list {
+    display: none;
+}
+#drp{
+    display: none;
+}
+
+#drp:checked ~ .dropdown-list {
+    display: flex;
+}
+.dropdown-items{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+   
+   
+}
+.profile{
+   display: flex;
+   border-radius: 20px;
+   flex-direction: column;
+    position: absolute;
+    width: 100%;
+    height: 25%;
+    top:0;
+    align-items:center ;
+    border:none;
+    border-bottom-left-radius:0 ;
+    border-bottom-right-radius:0 ;
+    padding-top: 20px;
+    border-bottom: 1px solid rgba(52, 44, 44, 0.444);
+}
+a.ptext{
+    padding-top: 10px;
+    text-decoration: none;
+    font-weight: 500;   
+    font-size: 20px;
+    color: rgba(53, 34, 34, 0.944);
+}
+.items{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    height: 69%;
+    justify-content: center;
+    margin:10px 0;
+    border: none;
+  
+
+
+}
+.setting{
+    border: 1px solid;
+    height: 35px;
+    border-radius: 30px;
+    padding: 10px 20px;
+    border: none;
+}
+.setting a{
+    color: #260a0aea;
+    font-weight: 500;
+    font-size: 18px;
+    text-decoration: none;
+    position: absolute;
+    padding:5px 10px;
+
+}
+.setting svg{
+padding:5px 0;
+}
+
+.setting:hover{
+    background-color: #f0f0f0b9;
+}
+.notification{
+    display: flex;
+    position: absolute;
+    border:none;
+    border-radius: 50px;
+    width: 36px;
+    justify-content: center;
+    right: 103px;
+    height: 33px;
+    padding-top:3px;
+    cursor: pointer;
+}
+@media(mAX-width:700px){
+    img{
+       padding-left:20px ;
+       padding-right: 20PX; 
+    }
+    .container:hover input{
+        width: 100px;
+    }
+}
+.notification:hover{
+    background-color: rgba(240, 248, 255, 0.263);
+}
+.drp-btn svg{
+    cursor: pointer;
+}
